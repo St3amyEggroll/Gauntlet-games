@@ -1,0 +1,2011 @@
+[
+  {
+    "bytes": 768,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Teleport Portals.Script",
+    "path": "src/Workspace/Teleport Portals/Script.server.luau"
+  },
+  {
+    "bytes": 188,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.MainModule",
+    "path": "src/Workspace/MainModule.luau"
+  },
+  {
+    "bytes": 831,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Sandbox.Unpacker",
+    "path": "src/Workspace/Sandbox/Unpacker.server.luau"
+  },
+  {
+    "bytes": 13152,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Model.Model.Hexagon.Weld.Package",
+    "path": "src/Workspace/Lobby/Model/Model/Hexagon/Weld/Package.server.luau"
+  },
+  {
+    "bytes": 9322,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Model.Model.Hexagon.Weld.Package.TextureConfiguration",
+    "path": "src/Workspace/Lobby/Model/Model/Hexagon/Weld/Package/TextureConfiguration.luau"
+  },
+  {
+    "bytes": 13152,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Model.Model.Hexagon.Weld.Package",
+    "path": "src/Workspace/Lobby/Model/Model/Hexagon/Weld/Package_2.server.luau"
+  },
+  {
+    "bytes": 9322,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Model.Model.Hexagon.Weld.Package.TextureConfiguration",
+    "path": "src/Workspace/Lobby/Model/Model/Hexagon/Weld/Package/TextureConfiguration_2.luau"
+  },
+  {
+    "bytes": 13152,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Model.Model.Hexagon.Weld.Package",
+    "path": "src/Workspace/Lobby/Model/Model/Hexagon/Weld/Package_3.server.luau"
+  },
+  {
+    "bytes": 9322,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Model.Model.Hexagon.Weld.Package.TextureConfiguration",
+    "path": "src/Workspace/Lobby/Model/Model/Hexagon/Weld/Package/TextureConfiguration_3.luau"
+  },
+  {
+    "bytes": 13152,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Model.Model.Hexagon.Weld.Package",
+    "path": "src/Workspace/Lobby/Model/Model/Hexagon/Weld/Package_4.server.luau"
+  },
+  {
+    "bytes": 9322,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Model.Model.Hexagon.Weld.Package.TextureConfiguration",
+    "path": "src/Workspace/Lobby/Model/Model/Hexagon/Weld/Package/TextureConfiguration_4.luau"
+  },
+  {
+    "bytes": 3202,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Animated Splashing Water.CharacterMeshSync",
+    "path": "src/Workspace/Lobby/Animated Splashing Water/CharacterMeshSync.server.luau"
+  },
+  {
+    "bytes": 13052,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Animated Splashing Water.CharacterMeshSync.MeshLODData.CharacterMesh.PoseTexture",
+    "path": "src/Workspace/Lobby/Animated Splashing Water/CharacterMeshSync/MeshLODData/CharacterMesh/PoseTexture.server.luau"
+  },
+  {
+    "bytes": 9635,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Animated Splashing Water.CharacterMeshSync.MeshLODData.CharacterMesh.PoseTexture.TextureConfiguration",
+    "path": "src/Workspace/Lobby/Animated Splashing Water/CharacterMeshSync/MeshLODData/CharacterMesh/PoseTexture/TextureConfiguration.luau"
+  },
+  {
+    "bytes": 13510,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby..PoseTexture",
+    "path": "src/Workspace/Lobby/_/PoseTexture.server.luau"
+  },
+  {
+    "bytes": 9952,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby..PoseTexture.TextureConfiguration",
+    "path": "src/Workspace/Lobby/_/PoseTexture/TextureConfiguration.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_2.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_3.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_4.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_5.server.luau"
+  },
+  {
+    "bytes": 5228,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Coinstackgiver.Script",
+    "path": "src/Workspace/Lobby/Coinstackgiver/Script.server.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig.server.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/EasyConfiguration.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.Type",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/Type.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig_2.server.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.Type",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/Type_2.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/EasyConfiguration_2.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig_3.server.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.Type",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/Type_3.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/EasyConfiguration_3.luau"
+  },
+  {
+    "bytes": 764,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Texture Part.Script",
+    "path": "src/Workspace/Lobby/Texture Part/Script.server.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig_4.server.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/EasyConfiguration_4.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.Type",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/Type_4.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom 2.0.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom 2.0/Part/Script.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom 2.0.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom 2.0/Part/Script_2.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom 2.0.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom 2.0/Part/Script_3.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom 2.0.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom 2.0/Part/Script_4.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom 2.0.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom 2.0/Part/Script_5.server.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig_5.server.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/EasyConfiguration_5.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.Type",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/Type_5.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig_6.server.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/EasyConfiguration_6.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.Type",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/Type_6.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig_7.server.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/EasyConfiguration_7.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.Type",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/Type_7.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig_8.server.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/EasyConfiguration_8.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Banner.Part.LightConfig.Type",
+    "path": "src/Workspace/Lobby/Banner/Part/LightConfig/Type_8.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_6.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_7.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_8.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_9.server.luau"
+  },
+  {
+    "bytes": 657,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Mushroom.Part.Script",
+    "path": "src/Workspace/Lobby/Mushroom/Part/Script_10.server.luau"
+  },
+  {
+    "bytes": 148,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.FIRE.Play",
+    "path": "src/Workspace/Lobby/FIRE/Play.server.luau"
+  },
+  {
+    "bytes": 489,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.FIRE.FireLight.Fire_Effect",
+    "path": "src/Workspace/Lobby/FIRE/FireLight/Fire_Effect.server.luau"
+  },
+  {
+    "bytes": 13052,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Hat_Hood.PoseTexture",
+    "path": "src/Workspace/Lobby/Hat_Hood/PoseTexture.server.luau"
+  },
+  {
+    "bytes": 9635,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Lobby.Hat_Hood.PoseTexture.TextureConfiguration",
+    "path": "src/Workspace/Lobby/Hat_Hood/PoseTexture/TextureConfiguration.luau"
+  },
+  {
+    "bytes": 1492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Teleporters.Main",
+    "path": "src/Workspace/Teleporters/Main.server.luau"
+  },
+  {
+    "bytes": 281,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Teleport One Way.Ignore",
+    "path": "src/Workspace/Teleport One Way/Ignore.server.luau"
+  },
+  {
+    "bytes": 13626,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Script",
+    "path": "src/Workspace/Script.server.luau"
+  },
+  {
+    "bytes": 71,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Teleportation Portals.Credits",
+    "path": "src/Workspace/Teleportation Portals/Credits.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Flickering Light.Part.Light Flicker Script",
+    "path": "src/Workspace/Flickering Light/Part/Light Flicker Script.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Flickering Light.Part.Light Flicker Script",
+    "path": "src/Workspace/Flickering Light/Part/Light Flicker Script_2.server.luau"
+  },
+  {
+    "bytes": 7287,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.qPerfectionWeld",
+    "path": "src/Workspace/qPerfectionWeld.server.luau"
+  },
+  {
+    "bytes": 838,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.NPCs are Becomming Smart: Game GUI.[Read Me]",
+    "path": "src/Workspace/NPCs are Becomming Smart_ Game GUI/[Read Me].server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Flickering Light.Part.Light Flicker Script",
+    "path": "src/Workspace/Flickering Light/Part/Light Flicker Script_3.server.luau"
+  },
+  {
+    "bytes": 216,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Ragdoll",
+    "path": "src/Workspace/Ragdoll.server.luau"
+  },
+  {
+    "bytes": 4279,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "Workspace.Ragdoll.RagdollV3",
+    "path": "src/Workspace/Ragdoll/RagdollV3.client.luau"
+  },
+  {
+    "bytes": 3326,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.SteampunkGlove.Server",
+    "path": "src/Workspace/SteampunkGlove/Server.server.luau"
+  },
+  {
+    "bytes": 2139,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "Workspace.SteampunkGlove.Client",
+    "path": "src/Workspace/SteampunkGlove/Client.client.luau"
+  },
+  {
+    "bytes": 13643,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Monster.Package",
+    "path": "src/Workspace/Monster/Package.server.luau"
+  },
+  {
+    "bytes": 9632,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Monster.Package.TextureConfiguration",
+    "path": "src/Workspace/Monster/Package/TextureConfiguration.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Model.LightConfig",
+    "path": "src/Workspace/Model/LightConfig.server.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Model.LightConfig.EasyConfiguration",
+    "path": "src/Workspace/Model/LightConfig/EasyConfiguration.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "Workspace.Model.LightConfig.Type",
+    "path": "src/Workspace/Model/LightConfig/Type.luau"
+  },
+  {
+    "bytes": 220,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Pads.TeleportScript",
+    "path": "src/Workspace/Pads/TeleportScript.server.luau"
+  },
+  {
+    "bytes": 14082,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Backrooms monster.Animate",
+    "path": "src/Workspace/Backrooms monster/Animate.server.luau"
+  },
+  {
+    "bytes": 861,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Backrooms monster.Health",
+    "path": "src/Workspace/Backrooms monster/Health.server.luau"
+  },
+  {
+    "bytes": 14208,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "Workspace.Backrooms monster.NPC",
+    "path": "src/Workspace/Backrooms monster/NPC.server.luau"
+  },
+  {
+    "bytes": 12410,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.RbxCharacterSounds",
+    "path": "src/StarterPlayer/StarterPlayerScripts/RbxCharacterSounds.client.luau"
+  },
+  {
+    "bytes": 7745,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.RbxCharacterSounds.AtomicBinding",
+    "path": "src/StarterPlayer/StarterPlayerScripts/RbxCharacterSounds/AtomicBinding.luau"
+  },
+  {
+    "bytes": 5820,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.SoundsRegionLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/SoundsRegionLocal.client.luau"
+  },
+  {
+    "bytes": 14160,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.InventorySystemLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/InventorySystemLocal.client.luau"
+  },
+  {
+    "bytes": 2456,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.Skyboxes",
+    "path": "src/StarterPlayer/StarterPlayerScripts/Skyboxes.client.luau"
+  },
+  {
+    "bytes": 13932,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.Skyboxes.Desert.qTexture",
+    "path": "src/StarterPlayer/StarterPlayerScripts/Skyboxes/Desert/qTexture.server.luau"
+  },
+  {
+    "bytes": 9805,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.Skyboxes.Desert.qTexture.TextureConfiguration",
+    "path": "src/StarterPlayer/StarterPlayerScripts/Skyboxes/Desert/qTexture/TextureConfiguration.luau"
+  },
+  {
+    "bytes": 6800,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.Skyboxes.Desert.LightConfig",
+    "path": "src/StarterPlayer/StarterPlayerScripts/Skyboxes/Desert/LightConfig.server.luau"
+  },
+  {
+    "bytes": 6575,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.Skyboxes.Desert.LightConfig.Type",
+    "path": "src/StarterPlayer/StarterPlayerScripts/Skyboxes/Desert/LightConfig/Type.luau"
+  },
+  {
+    "bytes": 4353,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.Skyboxes.Desert.LightConfig.EasyConfiguration",
+    "path": "src/StarterPlayer/StarterPlayerScripts/Skyboxes/Desert/LightConfig/EasyConfiguration.luau"
+  },
+  {
+    "bytes": 13561,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.Skyboxes.Pirate.qPerfectionWeld",
+    "path": "src/StarterPlayer/StarterPlayerScripts/Skyboxes/Pirate/qPerfectionWeld.server.luau"
+  },
+  {
+    "bytes": 5064,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.KillNotificationLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/KillNotificationLocal.client.luau"
+  },
+  {
+    "bytes": 42768,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.UIPolisherLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/UIPolisherLocal.client.luau"
+  },
+  {
+    "bytes": 32935,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.ShopSystemLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/ShopSystemLocal.client.luau"
+  },
+  {
+    "bytes": 2410,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.DrenchedEffectLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/DrenchedEffectLocal.client.luau"
+  },
+  {
+    "bytes": 0,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.GrassTargetingUI",
+    "path": "src/StarterPlayer/StarterPlayerScripts/GrassTargetingUI.client.luau"
+  },
+  {
+    "bytes": 2922,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.WindGauntletDoubleJump",
+    "path": "src/StarterPlayer/StarterPlayerScripts/WindGauntletDoubleJump.client.luau"
+  },
+  {
+    "bytes": 10834,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.Water",
+    "path": "src/StarterPlayer/StarterPlayerScripts/Water.client.luau"
+  },
+  {
+    "bytes": 1089,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.DesertStorm",
+    "path": "src/StarterPlayer/StarterPlayerScripts/DesertStorm.client.luau"
+  },
+  {
+    "bytes": 9969,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.GauntletHUDLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/GauntletHUDLocal.client.luau"
+  },
+  {
+    "bytes": 7338,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.StarterGauntletSelection",
+    "path": "src/StarterPlayer/StarterPlayerScripts/StarterGauntletSelection.client.luau"
+  },
+  {
+    "bytes": 7829,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.DailyRewardLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/DailyRewardLocal.client.luau"
+  },
+  {
+    "bytes": 9100,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.FirstJoinTutorial",
+    "path": "src/StarterPlayer/StarterPlayerScripts/FirstJoinTutorial.client.luau"
+  },
+  {
+    "bytes": 479,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.CameraResetLocal",
+    "path": "src/StarterPlayer/StarterPlayerScripts/CameraResetLocal.client.luau"
+  },
+  {
+    "bytes": 1322,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.LocalScript",
+    "path": "src/StarterPlayer/StarterPlayerScripts/LocalScript.client.luau"
+  },
+  {
+    "bytes": 429,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterPlayerScripts.ShopDiagnoser",
+    "path": "src/StarterPlayer/StarterPlayerScripts/ShopDiagnoser.client.luau"
+  },
+  {
+    "bytes": 872,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterCharacterScripts.LocalScript",
+    "path": "src/StarterPlayer/StarterCharacterScripts/LocalScript.client.luau"
+  },
+  {
+    "bytes": 0,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterCharacterScripts.Health",
+    "path": "src/StarterPlayer/StarterCharacterScripts/Health.client.luau"
+  },
+  {
+    "bytes": 494,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterCharacterScripts.NameTagCreator",
+    "path": "src/StarterPlayer/StarterCharacterScripts/NameTagCreator.server.luau"
+  },
+  {
+    "bytes": 1445,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterPlayer.StarterCharacterScripts.Dash Ability",
+    "path": "src/StarterPlayer/StarterCharacterScripts/Dash Ability.client.luau"
+  },
+  {
+    "bytes": 22,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterGui.LocalScript",
+    "path": "src/StarterGui/LocalScript.client.luau"
+  },
+  {
+    "bytes": 5409,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterGui.dialogueGui.Localdialogue",
+    "path": "src/StarterGui/dialogueGui/Localdialogue.client.luau"
+  },
+  {
+    "bytes": 111,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "StarterGui.LocalScript",
+    "path": "src/StarterGui/LocalScript_2.client.luau"
+  },
+  {
+    "bytes": 3326,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Space Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Space Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1402,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Space Gauntlet.LocalScript",
+    "path": "src/ReplicatedStorage/Gauntlets/Space Gauntlet/LocalScript.client.luau"
+  },
+  {
+    "bytes": 1797,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Space Gauntlet.SuperJumpGUI.LocalScript",
+    "path": "src/ReplicatedStorage/Gauntlets/Space Gauntlet/SuperJumpGUI/LocalScript.client.luau"
+  },
+  {
+    "bytes": 1737,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Space Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Space Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 3734,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Emerald Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Emerald Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1552,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Emerald Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Emerald Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 3326,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Full Gold Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Full Gold Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1737,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Full Gold Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Full Gold Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 4208,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Fire Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Fire Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1552,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Fire Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Fire Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 580,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Fire Gauntlet.Setup",
+    "path": "src/ReplicatedStorage/Gauntlets/Fire Gauntlet/Setup.server.luau"
+  },
+  {
+    "bytes": 1442,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Fire Gauntlet.Setup.FlareGunManager",
+    "path": "src/ReplicatedStorage/Gauntlets/Fire Gauntlet/Setup/FlareGunManager.server.luau"
+  },
+  {
+    "bytes": 350,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Fire Gauntlet.Setup.FlareGunManager.BulletVFX.Img.Slideshow",
+    "path": "src/ReplicatedStorage/Gauntlets/Fire Gauntlet/Setup/FlareGunManager/BulletVFX/Img/Slideshow.server.luau"
+  },
+  {
+    "bytes": 4880,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Fire Gauntlet.Setup.Flare.BulletScript",
+    "path": "src/ReplicatedStorage/Gauntlets/Fire Gauntlet/Setup/Flare/BulletScript.server.luau"
+  },
+  {
+    "bytes": 735,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Fire Gauntlet.BodyLook",
+    "path": "src/ReplicatedStorage/Gauntlets/Fire Gauntlet/BodyLook.client.luau"
+  },
+  {
+    "bytes": 877,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Fire Gauntlet.Shoot",
+    "path": "src/ReplicatedStorage/Gauntlets/Fire Gauntlet/Shoot.client.luau"
+  },
+  {
+    "bytes": 10222,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.X-Ray Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/X-Ray Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1241,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.X-Ray Gauntlet.CombatClient",
+    "path": "src/ReplicatedStorage/Gauntlets/X-Ray Gauntlet/CombatClient.client.luau"
+  },
+  {
+    "bytes": 3538,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.X-Ray Gauntlet.VisibilityClient",
+    "path": "src/ReplicatedStorage/Gauntlets/X-Ray Gauntlet/VisibilityClient.client.luau"
+  },
+  {
+    "bytes": 5020,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Wind Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Wind Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1943,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Wind Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Wind Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 9825,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Missle Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Missle Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1841,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Missle Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Missle Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 3326,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.God Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/God Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1552,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.God Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/God Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 8095,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Grappling Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Grappling Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 3276,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Grappling Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Grappling Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 3325,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Energy Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Energy Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1021,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Energy Gauntlet.LocalScript",
+    "path": "src/ReplicatedStorage/Gauntlets/Energy Gauntlet/LocalScript.client.luau"
+  },
+  {
+    "bytes": 1737,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Energy Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Energy Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 4527,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Void Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Void Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1552,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Void Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Void Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 4299,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Void Gauntlet.TeleportClient",
+    "path": "src/ReplicatedStorage/Gauntlets/Void Gauntlet/TeleportClient.client.luau"
+  },
+  {
+    "bytes": 9598,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Rock Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Rock Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 2008,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Rock Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Rock Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 7488,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Water Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Water Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 2703,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Water Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Water Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 7051,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Ice Gauntlet.Server",
+    "path": "src/ReplicatedStorage/Gauntlets/Ice Gauntlet/Server.server.luau"
+  },
+  {
+    "bytes": 1628,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Ice Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Ice Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 4446,
+    "class": "LocalScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Nature Gauntlet.Client",
+    "path": "src/ReplicatedStorage/Gauntlets/Nature Gauntlet/Client.client.luau"
+  },
+  {
+    "bytes": 6131,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Gauntlets.Nature Gauntlet.Script",
+    "path": "src/ReplicatedStorage/Gauntlets/Nature Gauntlet/Script.server.luau"
+  },
+  {
+    "bytes": 1301,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Desert.SandStorm.Script",
+    "path": "src/ReplicatedStorage/Desert/SandStorm/Script.server.luau"
+  },
+  {
+    "bytes": 1301,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Desert.SandStorm.Script",
+    "path": "src/ReplicatedStorage/Desert/SandStorm/Script_2.server.luau"
+  },
+  {
+    "bytes": 1301,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Desert.SandStorm.Script",
+    "path": "src/ReplicatedStorage/Desert/SandStorm/Script_3.server.luau"
+  },
+  {
+    "bytes": 1301,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Desert.SandStorm.Script",
+    "path": "src/ReplicatedStorage/Desert/SandStorm/Script_4.server.luau"
+  },
+  {
+    "bytes": 1652,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Pyramid.Lava.Animation",
+    "path": "src/ReplicatedStorage/Maps/Pyramid/Lava/Animation.server.luau"
+  },
+  {
+    "bytes": 711,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Pyramid.Lava.Burning",
+    "path": "src/ReplicatedStorage/Maps/Pyramid/Lava/Burning.server.luau"
+  },
+  {
+    "bytes": 157,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Island.Model.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Island/Model/Part/Script.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_2.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_3.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_4.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_5.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_6.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_7.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_8.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_9.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_10.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_11.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_12.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_13.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_14.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_15.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_16.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_17.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_18.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Union.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Union/Script.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Union.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Union/Script_2.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_19.server.luau"
+  },
+  {
+    "bytes": 406,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Bloxy Cola Vending Machine [Open Pls!].Pad.Click.ClickDetector.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Bloxy Cola Vending Machine [Open Pls!]/Pad/Click/ClickDetector/Script.server.luau"
+  },
+  {
+    "bytes": 109,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Bloxy Cola Vending Machine [Open Pls!].Way.Union.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Bloxy Cola Vending Machine [Open Pls!]/Way/Union/Script.server.luau"
+  },
+  {
+    "bytes": 20,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Bloxy Cola Vending Machine [Open Pls!].Logo.Logo.Sound.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Bloxy Cola Vending Machine [Open Pls!]/Logo/Logo/Sound/Script.server.luau"
+  },
+  {
+    "bytes": 214,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Bloxy Cola Vending Machine [Open Pls!].Description [PLS READ!]",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Bloxy Cola Vending Machine [Open Pls!]/Description [PLS READ!].server.luau"
+  },
+  {
+    "bytes": 403,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Bloxy Cola Vending Machine [Open Pls!].Ungroup in ServerStorage.FakeBloxyCola.ItemScript",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Bloxy Cola Vending Machine [Open Pls!]/Ungroup in ServerStorage/FakeBloxyCola/ItemScript.server.luau"
+  },
+  {
+    "bytes": 32,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Bloxy Cola Vending Machine [Open Pls!].Ungroup in ServerStorage.FakeBloxyCola.DestroyScript",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Bloxy Cola Vending Machine [Open Pls!]/Ungroup in ServerStorage/FakeBloxyCola/DestroyScript.server.luau"
+  },
+  {
+    "bytes": 896,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Bloxy Cola Vending Machine [Open Pls!].Ungroup in ServerStorage.BloxyCola.BloxyColaScript",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Bloxy Cola Vending Machine [Open Pls!]/Ungroup in ServerStorage/BloxyCola/BloxyColaScript.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_20.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_21.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_22.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_23.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_24.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_25.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_26.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_27.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_28.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_29.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_30.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_31.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_32.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_33.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_34.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_35.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Skyscraper.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Skyscraper/Glass/Script_36.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Train.Train.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Train/Train/Glass/Script.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Train.Train.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Train/Train/Glass/Script_2.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Train.Train.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Train/Train/Glass/Script_3.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Train.Train.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Train/Train/Glass/Script_4.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Train.Train.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Train/Train/Glass/Script_5.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Train.Train.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Train/Train/Glass/Script_6.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_2.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_3.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_4.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_5.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_6.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_7.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Glass/Script.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Glass/Script_2.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Glass/Script_3.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_8.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_9.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_10.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Crane.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Crane/Part/Script_11.server.luau"
+  },
+  {
+    "bytes": 157,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Boxing Ring.Boxing Ring.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Boxing Ring/Boxing Ring/Part/Script.server.luau"
+  },
+  {
+    "bytes": 157,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Boxing Ring.Boxing Ring.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Boxing Ring/Boxing Ring/Part/Script_2.server.luau"
+  },
+  {
+    "bytes": 157,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Boxing Ring.Boxing Ring.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Boxing Ring/Boxing Ring/Part/Script_3.server.luau"
+  },
+  {
+    "bytes": 157,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Boxing Ring.Boxing Ring.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Boxing Ring/Boxing Ring/Part/Script_4.server.luau"
+  },
+  {
+    "bytes": 157,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Boxing Ring.Boxing Ring.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/Boxing Ring/Boxing Ring/Part/Script_5.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.City.City.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/City/City/Part/Script.server.luau"
+  },
+  {
+    "bytes": 507,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.City.City.Part.Script",
+    "path": "src/ReplicatedStorage/Maps/City/City/Part/Script_2.server.luau"
+  },
+  {
+    "bytes": 7087,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.City.MeshPart.LightConfig",
+    "path": "src/ReplicatedStorage/Maps/City/MeshPart/LightConfig.server.luau"
+  },
+  {
+    "bytes": 6783,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.City.MeshPart.LightConfig.Type",
+    "path": "src/ReplicatedStorage/Maps/City/MeshPart/LightConfig/Type.luau"
+  },
+  {
+    "bytes": 4501,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.City.MeshPart.LightConfig.EasyConfiguration",
+    "path": "src/ReplicatedStorage/Maps/City/MeshPart/LightConfig/EasyConfiguration.luau"
+  },
+  {
+    "bytes": 2194,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.SinkingWater.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/SinkingWater/Script.server.luau"
+  },
+  {
+    "bytes": 1067,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.SinkingWater.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/SinkingWater/Script_2.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_2.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_3.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_4.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_5.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_6.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_7.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_8.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_9.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_10.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_11.server.luau"
+  },
+  {
+    "bytes": 1381,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Glass.Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Glass/Script_12.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script_2.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script_3.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script_4.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script_5.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script_6.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script_7.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script_8.server.luau"
+  },
+  {
+    "bytes": 492,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Sinking Ship.Flickering Light.Part.Light Flicker Script",
+    "path": "src/ReplicatedStorage/Maps/Sinking Ship/Flickering Light/Part/Light Flicker Script_9.server.luau"
+  },
+  {
+    "bytes": 295,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.Script",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/Script.server.luau"
+  },
+  {
+    "bytes": 295,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.Script",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/Script_2.server.luau"
+  },
+  {
+    "bytes": 313,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.burn",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/burn.server.luau"
+  },
+  {
+    "bytes": 295,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.RisingAcid.Script",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/RisingAcid/Script.server.luau"
+  },
+  {
+    "bytes": 295,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.RisingAcid.Script",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/RisingAcid/Script_2.server.luau"
+  },
+  {
+    "bytes": 313,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.RisingAcid.burn",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/RisingAcid/burn.server.luau"
+  },
+  {
+    "bytes": 295,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.Script",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/Script_3.server.luau"
+  },
+  {
+    "bytes": 295,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.Script",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/Script_4.server.luau"
+  },
+  {
+    "bytes": 313,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.burn",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/burn_2.server.luau"
+  },
+  {
+    "bytes": 295,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.Script",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/Script_5.server.luau"
+  },
+  {
+    "bytes": 295,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.Script",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/Script_6.server.luau"
+  },
+  {
+    "bytes": 313,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.Maps.Nuclear Plant.lava.burn",
+    "path": "src/ReplicatedStorage/Maps/Nuclear Plant/lava/burn_3.server.luau"
+  },
+  {
+    "bytes": 10117,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.UITheme",
+    "path": "src/ReplicatedStorage/UITheme.luau"
+  },
+  {
+    "bytes": 197,
+    "class": "ModuleScript",
+    "enabled": true,
+    "fullName": "ReplicatedStorage.OpenCoinShopModule",
+    "path": "src/ReplicatedStorage/OpenCoinShopModule.luau"
+  },
+  {
+    "bytes": 27959,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.RoundManager",
+    "path": "src/ServerScriptService/RoundManager.server.luau"
+  },
+  {
+    "bytes": 4953,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.ItemDataHandler",
+    "path": "src/ServerScriptService/ItemDataHandler.server.luau"
+  },
+  {
+    "bytes": 1539,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.Script",
+    "path": "src/ServerScriptService/Script.server.luau"
+  },
+  {
+    "bytes": 301,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.RegenHandler",
+    "path": "src/ServerScriptService/RegenHandler.server.luau"
+  },
+  {
+    "bytes": 1289,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.TeamHandler",
+    "path": "src/ServerScriptService/TeamHandler.server.luau"
+  },
+  {
+    "bytes": 4526,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.MarketplaceHandler",
+    "path": "src/ServerScriptService/MarketplaceHandler.server.luau"
+  },
+  {
+    "bytes": 1715,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.StarterGauntletServer",
+    "path": "src/ServerScriptService/StarterGauntletServer.server.luau"
+  },
+  {
+    "bytes": 2672,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.DailyRewardServer",
+    "path": "src/ServerScriptService/DailyRewardServer.server.luau"
+  },
+  {
+    "bytes": 2989,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.LeaderstatsHandler",
+    "path": "src/ServerScriptService/LeaderstatsHandler.server.luau"
+  },
+  {
+    "bytes": 1500,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.Script",
+    "path": "src/ServerScriptService/Script_2.server.luau"
+  },
+  {
+    "bytes": 490,
+    "class": "Script",
+    "enabled": true,
+    "fullName": "ServerScriptService.CoinShopProxyServer",
+    "path": "src/ServerScriptService/CoinShopProxyServer.server.luau"
+  }
+]
