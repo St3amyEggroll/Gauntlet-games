@@ -1,370 +1,204 @@
+--!strict
+-- InventorySystemLocal — round-start gauntlet selection + reopenable
+-- inventory, rebuilt on UIKit. Same remotes as before:
+-- OpenGauntletSelection(seconds), SelectGauntlet(name), GetOwnedTools, Regen.
+
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local UserInputService = game:GetService("UserInputService")
-local TweenService = game:GetService("TweenService")
+
+local UIKit = require(ReplicatedStorage:WaitForChild("UIKit"))
+local GameConfig = require(ReplicatedStorage:WaitForChild("GameConfig"))
+local T = UIKit.Theme
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
-local gauntletsFolder = ReplicatedStorage:WaitForChild("Gauntlets")
-local selectGauntletEvent = ReplicatedStorage:WaitForChild("SelectGauntlet")
-local openSelectionEvent = ReplicatedStorage:WaitForChild("OpenGauntletSelection")
+local UIBus = ReplicatedStorage:WaitForChild("UIBus")
 
-local getOwnedTools = ReplicatedStorage:WaitForChild("GetOwnedTools")
-local UITheme = require(ReplicatedStorage:WaitForChild("UITheme"))
+local selectGauntletEvent = ReplicatedStorage:WaitForChild("SelectGauntlet") :: RemoteEvent
+local openSelectionEvent = ReplicatedStorage:WaitForChild("OpenGauntletSelection") :: RemoteEvent
+local getOwnedTools = ReplicatedStorage:WaitForChild("GetOwnedTools") :: RemoteFunction
 
--- UI state
-local currentSelectedButton = nil
-local isFading = false
-local ownedGauntlets = {}
+local gui = Instance.new("ScreenGui")
+gui.Name = "InventoryUI"
+gui.ResetOnSpawn = false
+gui.IgnoreGuiInset = true
+gui.DisplayOrder = 120
+gui.Parent = playerGui
+UIKit.autoScale(gui)
+
+local panel = UIKit.panel("InventoryPanel", UDim2.fromOffset(620, 420))
+panel.AnchorPoint = Vector2.new(0.5, 0.5)
+panel.Position = UDim2.new(0.5, 0, 0.5, 0)
+panel.Visible = false
+panel.Parent = gui
+
+local _, closeBtn = UIKit.header(panel, "YOUR GAUNTLETS")
+
+local countdownLbl = UIKit.label(panel, "", 26)
+countdownLbl.AnchorPoint = Vector2.new(1, 0.5)
+countdownLbl.Position = UDim2.new(1, -60, 0, 26)
+countdownLbl.Size = UDim2.fromOffset(90, 34)
+countdownLbl.TextColor3 = T.GOLD
+countdownLbl.TextXAlignment = Enum.TextXAlignment.Right
+countdownLbl.ZIndex = 6
+UIKit.textStroke(countdownLbl, 2.5)
+
+local scroll = Instance.new("ScrollingFrame")
+scroll.BackgroundTransparency = 1
+scroll.BorderSizePixel = 0
+scroll.Size = UDim2.new(1, -28, 1, -130)
+scroll.Position = UDim2.new(0, 14, 0, 64)
+scroll.ScrollBarThickness = 5
+scroll.Parent = panel
+
+local grid = Instance.new("UIGridLayout")
+grid.CellSize = UDim2.fromOffset(108, 118)
+grid.CellPadding = UDim2.fromOffset(10, 10)
+grid.SortOrder = Enum.SortOrder.LayoutOrder
+grid.Parent = scroll
+
+local pad = Instance.new("UIPadding")
+pad.PaddingTop = UDim.new(0, 6)
+pad.PaddingLeft = UDim.new(0, 4)
+pad.Parent = scroll
+
+grid:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+	scroll.CanvasSize = UDim2.fromOffset(0, grid.AbsoluteContentSize.Y + 12)
+end)
+
+local footer = UIKit.label(panel, "Pick the gauntlet you want to fight with!", 15, T.FONT_BOLD)
+footer.Size = UDim2.new(0.6, 0, 0, 40)
+footer.Position = UDim2.new(0, 16, 1, -54)
+footer.TextXAlignment = Enum.TextXAlignment.Left
+footer.TextColor3 = T.TEXT_DIM
+
+local confirmBtn = UIKit.button("SELECT", "lime", panel)
+confirmBtn.Size = UDim2.fromOffset(180, 44)
+confirmBtn.AnchorPoint = Vector2.new(1, 1)
+confirmBtn.Position = UDim2.new(1, -16, 1, -12)
+confirmBtn.Visible = false
+
+local owned: { string } = {}
+local selectedName: string? = nil
+local strokes: { [string]: UIStroke } = {}
 
 local function updateOwned()
-	ownedGauntlets = getOwnedTools:InvokeServer() or {}
-	table.insert(ownedGauntlets, "Starter Gauntlet")
-end
-
-local THEME = UITheme.THEME
-THEME.PRIMARY = THEME.CYAN
-THEME.SECONDARY = THEME.MAGENTA
-THEME.ACCENT = THEME.YELLOW
-THEME.BLACK = THEME.BG
-THEME.LOCKED = THEME.TEXT_DIM
-THEME.VIBRANT_GRADIENT = THEME.YELLOW_TITLE
-
-local function applyHighEnd3D(label, colorSequence)
-	UITheme.outline(label, 4)
-	UITheme.textGradient(label, colorSequence or THEME.MATCH_GRADIENT)
-end
-
--- ==========================================
--- ITEM IMAGE CONFIGURATION (PASTE ASSET IDS HERE)
--- ==========================================
-local ICONS = {
-	["Emerald Gauntlet"]    = "rbxassetid://132640003436639",
-	["Water Gauntlet"]     = "rbxassetid://97379845339532",
-	["Fire Gauntlet"]      = "rbxassetid://108789212527369",
-	["Ice Gauntlet"]       = "rbxassetid://77632532567521",
-	["Rock Gauntlet"]      = "rbxassetid://129278461826205",
-	["Nature Gauntlet"]     = "rbxassetid://133298397460165",
-	["Energy Gauntlet"]    = "rbxassetid://94440351994069",
-	["Space Gauntlet"]     = "rbxassetid://131107012060344",
-	["Full Gold Gauntlet"] = "rbxassetid://101627968386615",
-	["God Gauntlet"] = "rbxassetid://124282535943612",
-	["Wind Gauntlet"] = "rbxassetid://120175668944028",
-	["Void Gauntlet"] = "rbxassetid://82173630536383",
-	["X-Ray Gauntlet"] = "rbxassetid://71772677262812",
-	["Missle Gauntlet"] = "rbxassetid://101627968386615",
-	["Grappling Gauntlet"] = "rbxassetid://101627968386615",
-}
-
--- Create ScreenGui
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "GauntletSelectionUI"
-screenGui.ResetOnSpawn = false
-screenGui.IgnoreGuiInset = true 
-screenGui.Enabled = false
-screenGui.Parent = playerGui
-
--- Blur Overlay
-local overlay = Instance.new("Frame")
-overlay.Name = "BlurOverlay"
-overlay.Size = UDim2.fromScale(1, 1)
-overlay.AnchorPoint = Vector2.new(0.5, 0.5) 
-overlay.Position = UDim2.fromScale(0.5, 0.5)  
-overlay.BackgroundColor3 = Color3.new(0,0,0)
-overlay.BackgroundTransparency = 1
-overlay.Parent = screenGui
-
--- Create Main Frame
-local mainFrame = UITheme.createPanel("MainFrame", UDim2.new(0, 600, 0, 400), THEME.CYAN)
-mainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-mainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-mainFrame.Parent = screenGui
-UITheme.createTabHeader(mainFrame, "GAUNTLETS", 150)
-
--- Title
-local listTitle = Instance.new("TextLabel")
-listTitle.Size = UDim2.new(1, -60, 0, 60)
-listTitle.Position = UDim2.new(0, 30, 0, 10)
-listTitle.BackgroundTransparency = 1
-listTitle.Text = "GAUNTLETS"
-listTitle.TextColor3 = THEME.WHITE
-listTitle.Font = THEME.FONT
-listTitle.TextSize = 28
-listTitle.TextXAlignment = Enum.TextXAlignment.Left
-listTitle.Parent = mainFrame
-applyHighEnd3D(listTitle, THEME.VIBRANT_GRADIENT)
-
--- Countdown
-local countdownLabel = Instance.new("TextLabel")
-countdownLabel.Name = "CountdownLabel"
-countdownLabel.Size = UDim2.new(0, 100, 0, 60)
-countdownLabel.Position = UDim2.new(1, -30, 0, 10) 
-countdownLabel.AnchorPoint = Vector2.new(1, 0)
-countdownLabel.BackgroundTransparency = 1
-countdownLabel.Text = "10S"
-countdownLabel.TextColor3 = THEME.WHITE
-countdownLabel.Font = THEME.FONT
-countdownLabel.TextSize = 32
-countdownLabel.TextXAlignment = Enum.TextXAlignment.Right
-countdownLabel.TextYAlignment = Enum.TextYAlignment.Center
-countdownLabel.Parent = mainFrame
-
-applyHighEnd3D(countdownLabel)
-
--- CONTENT SECTION
-local contentFrame = Instance.new("Frame")
-contentFrame.Size = UDim2.new(1, -40, 1, -100)
-contentFrame.Position = UDim2.new(0, 20, 0, 80)
-contentFrame.BackgroundTransparency = 1
-contentFrame.Parent = mainFrame
-
-local gridContainer = Instance.new("Frame")
-gridContainer.Size = UDim2.new(0.5, -10, 1, 0)
-gridContainer.BackgroundTransparency = 1
-gridContainer.Parent = contentFrame
-
-local scrollingFrame = Instance.new("ScrollingFrame")
-scrollingFrame.Name = "GauntletGrid"
-scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-scrollingFrame.BackgroundTransparency = 1
-scrollingFrame.BorderSizePixel = 0
-scrollingFrame.ScrollBarThickness = 4
-scrollingFrame.ScrollBarImageColor3 = THEME.SECONDARY
-scrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
-scrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
-scrollingFrame.Parent = gridContainer
-
-local uiGrid = Instance.new("UIGridLayout")
-uiGrid.CellSize = UDim2.new(0, 80, 0, 80)
-uiGrid.CellPadding = UDim2.new(0, 10, 0, 10)
-uiGrid.SortOrder = Enum.SortOrder.Name
-uiGrid.Parent = scrollingFrame
-
--- Details Panel
-local detailsFrame = Instance.new("Frame")
-detailsFrame.Size = UDim2.new(0.5, -10, 1, 0)
-detailsFrame.Position = UDim2.fromScale(0.5, 0)
-detailsFrame.BackgroundColor3 = THEME.SURFACE
-detailsFrame.BackgroundTransparency = 0.2
-detailsFrame.Parent = contentFrame
-
-local detailsCorner = Instance.new("UICorner")
-detailsCorner.CornerRadius = UDim.new(0, 12)
-detailsCorner.Parent = detailsFrame
-
-local gNameLabel = Instance.new("TextLabel")
-gNameLabel.Size = UDim2.new(1, -20, 0, 40)
-gNameLabel.Position = UDim2.fromOffset(10, 10)
-gNameLabel.BackgroundTransparency = 1
-gNameLabel.Text = "SELECT A GAUNTLET"
-gNameLabel.TextColor3 = THEME.WHITE
-gNameLabel.Font = THEME.FONT
-gNameLabel.TextSize = 20
-gNameLabel.TextWrapped = true
-gNameLabel.Parent = detailsFrame
-
-local gAbilityLabel = Instance.new("TextLabel")
-gAbilityLabel.Size = UDim2.new(1, -20, 1, -110)
-gAbilityLabel.Position = UDim2.new(0, 10, 0, 50)
-gAbilityLabel.BackgroundTransparency = 1
-gAbilityLabel.Text = ""
-gAbilityLabel.TextColor3 = THEME.TEXT_DIM
-gAbilityLabel.Font = THEME.FONT_MED
-gAbilityLabel.TextSize = 14
-gAbilityLabel.TextWrapped = true
-gAbilityLabel.TextYAlignment = Enum.TextYAlignment.Top
-gAbilityLabel.Parent = detailsFrame
-
-local selectButton = UITheme.createActionButton("SELECT", nil, 44, THEME.LIME)
-selectButton.Size = UDim2.new(1, -20, 0, 44)
-selectButton.Position = UDim2.new(0, 10, 1, -10)
-selectButton.AnchorPoint = Vector2.new(0, 1)
-selectButton.Visible = false
-selectButton.Parent = detailsFrame
-
-local gauntletData = {
-	["Fire Gauntlet"] = {stats = "Damage: High\nSpeed: Medium", ability = "Passive: Deals burn damage over 3s on hit."},
-	["Rock Gauntlet"] = {stats = "Damage: High\nSpeed: Medium", ability = "Ability: Smash your opponents into the ground and strike a boulder to their dome. (5s CD)."},
-	["Emerald Gauntlet"] = {stats = "Damage: Medium\nSpeed: Medium", ability = "Passive: Heals on hit."},
-	["Energy Gauntlet"] = {stats = "Damage: Low\nSpeed: Very High", ability = "Passive: Increases speed for 3s (5s CD)."},
-	["Full Gold Gauntlet"] = {stats = "Damage: High\nSpeed: Medium", ability = "Passive: Deals 50% damage on hit."},
-	["God Gauntlet"] = {stats = "Damage: Very Very High\nSpeed: Medium", ability = "Passive: Ultimate reality-breaking power causing 100% damage per hit."},
-	["Grappling Gauntlet"] = {stats = "Damage: Medium\nSpeed: Medium", ability = "Ability: Shoots a grappling hook to target location, pulls player to hook. (6s CD)."},
-	["Ice Gauntlet"] = {stats = "Damage: Medium\nSpeed: Medium", ability = "Ability: Freezes player for 3s (10s CD)."},
-	["Missle Gauntlet"] = {stats = "Damage: High\nSpeed: Medium", ability = "Ability: Shoots 3 missils at target location, slightly following player. (6s CD)."},
-	["Nature Gauntlet"] = {stats = "Damage: Medium\nSpeed: Medium", ability = "Ability: Shoots out vine that pulls targets in range towards you. (8s CD)."},
-	["Space Gauntlet"] = {stats = "Damage: Medium\nSpeed: Medium", ability = "Ability: Shoots you high up into the air. (5s CD)."},
-	["Void Gauntlet"] = {stats = "Damage: Medium\nSpeed: Very very high", ability = "Ability: Allows you to teleport anywhere on the map. (5s CD)."},
-	["Water Gauntlet"] = {stats = "Damage: Medium\nSpeed: Medium", ability = "Ability: Slows down player and blurs screen for 3s. (5s CD)."},
-	["Wind Gauntlet"] = {stats = "Damage: Medium\nSpeed: High", ability = "Ability: Allows you to fly for 3s. (8s CD)."},
-	["X-ray Gauntlet"] = {stats = "Damage: Medium\nSpeed: Medium", ability = "Highlights all players on map and makes you go invisible for 5s (5s CD)."},
-}
-
-local function updateDetails(name)
-	gNameLabel.Text = name:upper()
-	local data = gauntletData[name]
-	if data then
-		gAbilityLabel.Text = data.stats .. "\n\n" .. data.ability
-	else
-		gAbilityLabel.Text = "No stats available.\n\nDescription: A standard combat tool."
+	local ok, result = pcall(function()
+		return getOwnedTools:InvokeServer()
+	end)
+	owned = (ok and typeof(result) == "table") and result or {}
+	if not table.find(owned, "Starter Gauntlet") then
+		table.insert(owned, 1, "Starter Gauntlet")
 	end
-	selectButton.Visible = true
-	selectButton.Text = "SELECT"
-	selectButton.BackgroundColor3 = THEME.PRIMARY
 end
 
-selectButton.MouseButton1Click:Connect(function()
-	if currentSelectedButton then
-		selectGauntletEvent:FireServer(currentSelectedButton.Name)
-		selectButton.Text = "SELECTED!"
-		selectButton.BackgroundColor3 = Color3.fromRGB(0, 200, 100)
-
-		TweenService:Create(selectButton, TweenInfo.new(0.1, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.new(1, -10, 0, 48)}):Play()
-		task.wait(0.1)
-		TweenService:Create(selectButton, TweenInfo.new(0.2), {Size = UDim2.new(1, -20, 0, 44)}):Play()
+local function rebuildGrid()
+	for _, child in ipairs(scroll:GetChildren()) do
+		if child:IsA("Frame") then child:Destroy() end
 	end
-end)
+	strokes = {}
 
-local function createGauntletButton(gauntletName)
-	local isOwned = table.find(ownedGauntlets, gauntletName)
+	for i, name in ipairs(owned) do
+		local info = GameConfig.Gauntlets[name]
+		local card = UIKit.card(name, scroll)
+		card.LayoutOrder = info and (UIKit.RarityOrder[info.Rarity] or 1) or 0
 
-	local button = Instance.new("TextButton")
-	button.Name = gauntletName
-	button.BackgroundColor3 = isOwned and THEME.SURFACE or THEME.BG
-	button.BackgroundTransparency = isOwned and 0.2 or 0.6
-	button.Text = ""
-	button.Parent = scrollingFrame
-	UITheme.styleCard(button, isOwned and THEME.CYAN or THEME.TEXT_DIM, isOwned and THEME.SURFACE or THEME.BG)
-
-	local stroke = button:FindFirstChild("NeonGlow")
-
-	if isOwned then
 		local icon = Instance.new("ImageLabel")
-		icon.Name = "ItemIcon"
-		icon.Size = UDim2.fromScale(0.8, 0.8) 
-		icon.Position = UDim2.fromScale(0.1, 0.1) 
 		icon.BackgroundTransparency = 1
-		icon.Image = ICONS[gauntletName] or "rbxassetid://0"
-		icon.Parent = button
+		icon.Size = UDim2.fromOffset(54, 54)
+		icon.Position = UDim2.new(0.5, -27, 0, 8)
+		icon.ScaleType = Enum.ScaleType.Fit
+		icon.Image = info and info.Icon or GameConfig.FallbackIcon
+		icon.Parent = card
 
-		-- Integrated Black Border Setup around Image
-		local iconStroke = Instance.new("UIStroke")
-		iconStroke.Name = "IconBorder"
-		iconStroke.Color = Color3.fromRGB(0, 0, 0)
-		iconStroke.Thickness = 2
-		iconStroke.Transparency = 0
-		iconStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-		iconStroke.Parent = icon
-	else
-		local label = Instance.new("ImageLabel")
-		label.Size = UDim2.new(1, 0, 1, 0)
-		label.BackgroundTransparency = 1
-		label.Image = "rbxassetid://113981661296218"
-		label.ImageColor3 = THEME.LOCKED
-		label.ScaleType = Enum.ScaleType.Fit
-		label.Parent = button
-	end
+		local lbl = UIKit.label(card, (name:gsub(" Gauntlet", "")), 13)
+		lbl.Size = UDim2.new(1, -6, 0, 18)
+		lbl.Position = UDim2.new(0, 3, 0, 66)
+		lbl.TextTruncate = Enum.TextTruncate.AtEnd
+		UIKit.textStroke(lbl, 2)
 
-	if not isOwned then
-		button.AutoButtonColor = false
-		return
-	end
+		local rarity = UIKit.label(card, info and string.upper(info.Rarity) or "STARTER", 10, T.FONT_BOLD)
+		rarity.Size = UDim2.new(1, 0, 0, 14)
+		rarity.Position = UDim2.new(0, 0, 0, 86)
+		rarity.TextColor3 = info and (UIKit.Rarity[info.Rarity] or T.TEXT_DIM) or T.TEXT_DIM
 
-	button.MouseEnter:Connect(function()
-		TweenService:Create(button, TweenInfo.new(0.2), {BackgroundColor3 = THEME.SURFACE_LIGHT}):Play()
-		TweenService:Create(stroke, TweenInfo.new(0.2), {Transparency = 0, Thickness = 3}):Play()
-	end)
+		strokes[name] = card:FindFirstChild("KitStroke") :: UIStroke
 
-	button.MouseLeave:Connect(function()
-		if currentSelectedButton ~= button then
-			TweenService:Create(button, TweenInfo.new(0.2), {BackgroundColor3 = THEME.SURFACE}):Play()
-			TweenService:Create(stroke, TweenInfo.new(0.2), {Transparency = 0.6, Thickness = 2}):Play()
-		end
-	end)
-
-	button.MouseButton1Click:Connect(function()
-		if currentSelectedButton then
-			for _, child in ipairs(currentSelectedButton:GetChildren()) do
-				if child:IsA("UIStroke") and child.Name ~= "IconBorder" then
-					child.Color = THEME.SECONDARY
-					child.Transparency = 0.6
-				end
+		local hit = Instance.new("TextButton")
+		hit.BackgroundTransparency = 1
+		hit.Text = ""
+		hit.Size = UDim2.fromScale(1, 1)
+		hit.Parent = card
+		UIKit.bindButtonFX(hit, true)
+		hit.MouseButton1Click:Connect(function()
+			UIKit.play("Click")
+			selectedName = name
+			for n, s in pairs(strokes) do
+				s.Color = (n == name) and T.GOLD or T.STROKE
+				s.Thickness = (n == name) and 4 or T.OUTLINE
 			end
-		end
+			confirmBtn.Visible = true
+			confirmBtn.Text = "SELECT " .. string.upper(name:gsub(" Gauntlet", ""))
+		end)
+	end
+end
 
-		currentSelectedButton = button
-		stroke.Color = THEME.PRIMARY
-		stroke.Transparency = 0
+local isOpen = false
+local selectionMode = false
 
-		updateDetails(gauntletName)
+local function close()
+	if not isOpen then return end
+	isOpen = false
+	UIKit.popClose(panel)
+end
+
+local function open(selection: boolean)
+	UIKit.closeOthers("Inventory")
+	isOpen = true
+	selectionMode = selection
+	countdownLbl.Text = ""
+	footer.Text = selection and "Pick the gauntlet you want to fight with!" or "Everything you own. Buy more in the shop!"
+	task.spawn(function()
+		updateOwned()
+		rebuildGrid()
 	end)
+	UIKit.popOpen(panel)
 end
 
--- Refresh and Load Gauntlets
-local function refreshGauntletList()
-	for _, child in ipairs(scrollingFrame:GetChildren()) do
-		if child:IsA("TextButton") then child:Destroy() end
-	end
+UIKit.registerExclusive("Inventory", close)
+closeBtn.MouseButton1Click:Connect(close)
 
-	updateOwned()
-
-	for _, gauntlet in ipairs(gauntletsFolder:GetChildren()) do
-		if gauntlet:IsA("Tool") then
-			createGauntletButton(gauntlet.Name)
-		end
-	end
-end
-
-local function toggleUI(show, duration)
-	if show then
-		refreshGauntletList()
-		screenGui.Enabled = true
-		overlay.BackgroundTransparency = 1
-		mainFrame.Position = UDim2.fromScale(0.5, 1.5)
-
-		TweenService:Create(overlay, TweenInfo.new(0.5), {BackgroundTransparency = 0.6}):Play()
-		TweenService:Create(mainFrame, TweenInfo.new(0.6, Enum.EasingStyle.Back), {Position = UDim2.fromScale(0.5, 0.5)}):Play()
-	else
-		TweenService:Create(overlay, TweenInfo.new(0.3), {BackgroundTransparency = 1}):Play()
-		TweenService:Create(mainFrame, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.In), {Position = UDim2.fromScale(0.5, -0.6)}):Play()
-		task.wait(0.5)
-		screenGui.Enabled = false
-	end
-end
-
--- Selection Event
-openSelectionEvent.OnClientEvent:Connect(function(seconds)
-	toggleUI(true)
-
-	currentSelectedButton = nil
-	selectButton.Visible = false
-	gNameLabel.Text = "SELECT A GAUNTLET"
-	gAbilityLabel.Text = ""
-
-	local timeRemaining = seconds
-	while timeRemaining >= 0 and screenGui.Enabled do
-		countdownLabel.Text = timeRemaining .. "S"
-
-		local strokeElement = countdownLabel:FindFirstChildOfClass("UIStroke")
-		if timeRemaining <= 3 then
-			countdownLabel.TextColor3 = THEME.RED
-			if strokeElement then strokeElement.Color = Color3.new(0.2, 0, 0) end
-			TweenService:Create(countdownLabel, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, true), {TextSize = 52}):Play()
-		else
-			countdownLabel.TextColor3 = THEME.WHITE
-			if strokeElement then strokeElement.Color = Color3.new(0, 0, 0) end
-		end
-		task.wait(1)
-		timeRemaining -= 1
-	end
-
-	if screenGui.Enabled then
-		toggleUI(false)
-	end
+confirmBtn.MouseButton1Click:Connect(function()
+	if not selectedName then return end
+	selectGauntletEvent:FireServer(selectedName)
+	UIKit.notify("Selected " .. (selectedName :: string) .. "!", T.HEADER_A, "🧤")
+	close()
 end)
 
-ReplicatedStorage:WaitForChild("Regen").OnClientEvent:Connect(function()
-	if screenGui.Enabled then
-		toggleUI(false)
-	end
+-- Round-start selection window (server-driven, with countdown)
+openSelectionEvent.OnClientEvent:Connect(function(seconds: number)
+	open(true)
+	task.spawn(function()
+		local remaining = seconds or 10
+		while remaining > 0 and isOpen do
+			countdownLbl.Text = remaining .. "s"
+			countdownLbl.TextColor3 = remaining <= 3 and T.RED or T.GOLD
+			task.wait(1)
+			remaining -= 1
+		end
+		if isOpen and selectionMode then
+			close()
+		end
+	end)
+end)
+
+-- HUD reopen button
+;(UIBus:WaitForChild("OpenInventory") :: BindableEvent).Event:Connect(function()
+	if isOpen then close() else open(false) end
+end)
+
+-- Regen effect from the old script: respawn shield flash (kept minimal)
+local regen = ReplicatedStorage:WaitForChild("Regen") :: RemoteEvent
+regen.OnClientEvent:Connect(function()
+	UIKit.notify("You've been regenerated!", T.GREEN, "✨", 2)
 end)

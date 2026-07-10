@@ -1,124 +1,227 @@
+--!strict
+-- MarketplaceHandler — the ONE ProcessReceipt for the whole game.
+-- Grants coin packs (saved through leaderstats -> PlayerCoins_V1 DataStore)
+-- and runs troll purchases. Troll effects hit every player EXCEPT the buyer
+-- and everyone sees a "PlayerName used X!" broadcast.
+
 local MarketplaceService = game:GetService("MarketplaceService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Debris = game:GetService("Debris")
 
--- =========================================================
--- PUT YOUR REAL ROBLOX DEV PRODUCT IDS HERE
--- =========================================================
-local PRODUCT_TO_COINS = {
-	[3273984433] = 100,
-	[3605946307] = 300,
-	[3605946335] = 500,
-	[3605946465] = 1000,
-	[3605946501] = 5000,
-	
-	-- GamePass IDs (Matched from ShopSystemLocal)
-	[1899025219] = 1499, -- Void Gauntlet price
-	[1899547200] = 999,  -- Full Gold Gauntlet price
-	[1899601270] = 2499, -- God Gauntlet price
-}
+local GameConfig = require(ReplicatedStorage:WaitForChild("GameConfig"))
 
-local purchaseFinished = ReplicatedStorage:FindFirstChild("PurchaseFinished") or Instance.new("RemoteEvent")
-purchaseFinished.Name = "PurchaseFinished"
-purchaseFinished.Parent = ReplicatedStorage
+local purchaseFinished = ReplicatedStorage:FindFirstChild("PurchaseFinished") :: RemoteEvent?
+if not purchaseFinished then
+	purchaseFinished = Instance.new("RemoteEvent")
+	purchaseFinished.Name = "PurchaseFinished"
+	purchaseFinished.Parent = ReplicatedStorage
+end
 
+local trollEffect = ReplicatedStorage:FindFirstChild("TrollEffect") :: RemoteEvent?
+if not trollEffect then
+	trollEffect = Instance.new("RemoteEvent")
+	trollEffect.Name = "TrollEffect"
+	trollEffect.Parent = ReplicatedStorage
+end
+
+--========================================================
+-- COIN PACKS
+--========================================================
+local PRODUCT_TO_COINS: { [number]: number } = {}
+for _, bundle in ipairs(GameConfig.CoinBundles) do
+	PRODUCT_TO_COINS[bundle.ProductId] = bundle.Amount
+end
+
+-- Legacy: gauntlet gamepasses that used to also grant coins are handled by
+-- ItemDataHandler for ownership; no coin grant here.
+
+local function awardCoins(player: Player, amount: number): boolean
+	local leaderstats = player:FindFirstChild("leaderstats") or player:WaitForChild("leaderstats", 5)
+	local coinsStat = leaderstats and (leaderstats:FindFirstChild("Coins") or leaderstats:WaitForChild("Coins", 5))
+	if not coinsStat or not coinsStat:IsA("IntValue") then
+		return false
+	end
+	coinsStat.Value += amount
+	return true
+end
+
+--========================================================
+-- TROLL EFFECTS (server authoritative)
+--========================================================
+local TROLL_BY_PRODUCT: { [number]: any } = {}
+local TROLL_BY_PASS: { [number]: any } = {}
+for _, item in ipairs(GameConfig.TrollItems) do
+	if item.Id > 0 then
+		if item.Kind == "Product" then
+			TROLL_BY_PRODUCT[item.Id] = item
+		else
+			TROLL_BY_PASS[item.Id] = item
+		end
+	end
+end
+
+local function othersOf(buyer: Player): { Player }
+	local result = {}
+	for _, p in ipairs(Players:GetPlayers()) do
+		if p ~= buyer then
+			table.insert(result, p)
+		end
+	end
+	return result
+end
+
+local function broadcast(item: any, buyer: Player)
+	local msg = string.format(item.Broadcast, buyer.DisplayName);
+	(trollEffect :: RemoteEvent):FireAllClients("Broadcast", msg)
+end
+
+local TrollActions: { [string]: (buyer: Player) -> () } = {}
+
+TrollActions.Highlight = function(buyer)
+	for _, p in ipairs(othersOf(buyer)) do
+		local char = p.Character
+		if char then
+			local h = Instance.new("Highlight")
+			h.Name = "TrollHighlight"
+			h.FillColor = Color3.fromRGB(255, 80, 80)
+			h.FillTransparency = 0.6
+			h.OutlineColor = Color3.fromRGB(255, 255, 255)
+			h.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+			h.Parent = char
+			Debris:AddItem(h, 10)
+		end
+	end
+end
+
+TrollActions.JoinRound = function(buyer)
+	-- Pull the buyer out of the lobby and into the active round
+	local char = buyer.Character
+	local ingame = workspace:FindFirstChild("Ingame")
+	if not (char and char:FindFirstChild("HumanoidRootPart") and ingame) then return end
+	if workspace:GetAttribute("MatchActive") ~= true then return end
+	if char.Parent == ingame then return end
+
+	local teleports = workspace:FindFirstChild("Teleports")
+	local spawnPoint: BasePart? = nil
+	if teleports then
+		local options = teleports:GetChildren()
+		if #options > 0 then
+			local pick = options[math.random(1, #options)]
+			if pick:IsA("BasePart") then spawnPoint = pick end
+		end
+	end
+	if spawnPoint then
+		char:PivotTo(spawnPoint.CFrame * CFrame.new(0, 3, 0))
+	end
+	char.Parent = ingame
+end
+
+TrollActions.Jumpscare = function(buyer)
+	for _, p in ipairs(othersOf(buyer)) do
+		(trollEffect :: RemoteEvent):FireClient(p, "Jumpscare")
+	end
+end
+
+TrollActions.Burn = function(buyer)
+	for _, p in ipairs(othersOf(buyer)) do
+		local char = p.Character
+		local hum = char and char:FindFirstChildOfClass("Humanoid")
+		local root = char and char:FindFirstChild("HumanoidRootPart")
+		if char and hum and hum.Health > 0 and root then
+			local fire = Instance.new("Fire")
+			fire.Size = 6
+			fire.Heat = 10
+			fire.Parent = root
+			Debris:AddItem(fire, 3)
+			task.spawn(function()
+				for _ = 1, 3 do
+					if hum.Health <= 0 then break end
+					hum:TakeDamage(4)
+					task.wait(1)
+				end
+			end)
+		end
+	end
+end
+
+TrollActions.Explode = function(buyer)
+	for _, p in ipairs(othersOf(buyer)) do
+		local char = p.Character
+		local root = char and char:FindFirstChild("HumanoidRootPart")
+		if root then
+			local boom = Instance.new("Explosion")
+			boom.Position = root.Position
+			boom.BlastRadius = 8
+			boom.BlastPressure = 0 -- no ragdoll launch, just damage + visuals
+			boom.DestroyJointRadiusPercent = 0
+			boom.Parent = workspace
+			local hum = char:FindFirstChildOfClass("Humanoid")
+			if hum then hum:TakeDamage(35) end
+		end
+	end
+end
+
+TrollActions.Blur = function(buyer)
+	for _, p in ipairs(othersOf(buyer)) do
+		(trollEffect :: RemoteEvent):FireClient(p, "Blur", 3)
+	end
+end
+
+local function runTroll(item: any, buyer: Player)
+	local action = TrollActions[item.Key]
+	if not action then
+		warn("[MarketplaceHandler] No troll action for key: " .. tostring(item.Key))
+		return
+	end
+	broadcast(item, buyer)
+	task.spawn(action, buyer)
+end
+
+--========================================================
+-- RECEIPTS
+--========================================================
 local function processReceipt(receiptInfo)
 	local player = Players:GetPlayerByUserId(receiptInfo.PlayerId)
 	if not player then
-		-- Player left before receipt was processed, Roblox will retry later
 		return Enum.ProductPurchaseDecision.NotProcessedYet
 	end
 
 	local productId = receiptInfo.ProductId
+
 	local coinAmount = PRODUCT_TO_COINS[productId]
-
-	if not coinAmount then
-		warn("[MarketplaceHandler] No coin reward configured for product id:", productId)
-		return Enum.ProductPurchaseDecision.NotProcessedYet
+	if coinAmount then
+		if not awardCoins(player, coinAmount) then
+			return Enum.ProductPurchaseDecision.NotProcessedYet
+		end
+		(purchaseFinished :: RemoteEvent):FireClient(player, "Coins", coinAmount)
+		return Enum.ProductPurchaseDecision.PurchaseGranted
 	end
 
-	-- Use a loop to wait for leaderstats if player just joined
-	local leaderstats = player:WaitForChild("leaderstats", 5)
-	if not leaderstats then
-		warn("[MarketplaceHandler] leaderstats not found for player: " .. player.Name)
-		return Enum.ProductPurchaseDecision.NotProcessedYet
-	end
-	
-	local coinsStat = leaderstats:WaitForChild("Coins", 5)
-	if not coinsStat then
-		warn("[MarketplaceHandler] Coins stat not found for player: " .. player.Name)
-		return Enum.ProductPurchaseDecision.NotProcessedYet
+	local trollItem = TROLL_BY_PRODUCT[productId]
+	if trollItem then
+		runTroll(trollItem, player)
+		return Enum.ProductPurchaseDecision.PurchaseGranted
 	end
 
-	-- Award coins
-	coinsStat.Value = coinsStat.Value + coinAmount
-	-- Attribute will sync automatically via LeaderstatsHandler
-	
-	print(("[MarketplaceHandler] Awarded %d coins to %s for product %d")
-		:format(coinAmount, player.Name, productId))
-
-	if purchaseFinished then
-		purchaseFinished:FireClient(player, "Coins", coinAmount)
-	end
-
-	return Enum.ProductPurchaseDecision.PurchaseGranted
-end
-
-local function handlePromptGamePassFinished(player, gamePassId, wasPurchased)
-	if not wasPurchased then return end
-	
-	local coinAmount = PRODUCT_TO_COINS[gamePassId]
-	if not coinAmount then
-		-- This might be a functional gamepass (like 2x coins) rather than a coin bundle
-		-- But the user specifically asked for "gamepasses give you the amount of coins"
-		return
-	end
-	
-	local leaderstats = player:WaitForChild("leaderstats", 5)
-	if not leaderstats then return end
-	
-	local coinsStat = leaderstats:WaitForChild("Coins", 5)
-	if not coinsStat then return end
-	
-	coinsStat.Value = coinsStat.Value + coinAmount
-	
-	print(("[MarketplaceHandler] Awarded %d coins to %s for gamepass %d")
-		:format(coinAmount, player.Name, gamePassId))
-	
-	if purchaseFinished then
-		purchaseFinished:FireClient(player, "Coins", coinAmount)
-	end
+	warn("[MarketplaceHandler] Unconfigured product id:", productId)
+	return Enum.ProductPurchaseDecision.NotProcessedYet
 end
 
 MarketplaceService.ProcessReceipt = processReceipt
-MarketplaceService.PromptGamePassPurchaseFinished:Connect(handlePromptGamePassFinished)
 
--- Check for existing gamepasses when player joins
-Players.PlayerAdded:Connect(function(player)
-	for gamePassId, coinAmount in pairs(PRODUCT_TO_COINS) do
-		-- We need to check if it's a gamepass. GamePasses usually have higher IDs, 
-		-- but the most reliable way is UserOwnsGamePassAsync.
-		-- Note: This will treat ALL IDs in the table as potential gamepasses.
-		task.spawn(function()
-			local success, owns = pcall(function()
-				return MarketplaceService:UserOwnsGamePassAsync(player.UserId, gamePassId)
-			end)
-			
-			if success and owns then
-				-- If they own it, but might have already been awarded, we'd need a DataStore check.
-				-- However, for one-time coins, gamepasses are usually not the right choice.
-				-- If the user wants gamepasses to give coins, they might mean it's a one-time reward.
-				-- For simplicity, we award it if they own it.
-				
-				local leaderstats = player:WaitForChild("leaderstats", 10)
-				local coinsStat = leaderstats and leaderstats:WaitForChild("Coins", 5)
-				
-				if coinsStat then
-					-- Logic here depends on if this should be a ONE-TIME reward recorded in DataStore.
-					-- Since I don't see a "GamePassesClaimed" table in LeaderstatsHandler,
-					-- I'll just handle the purchase event for now.
-				end
-			end
-		end)
+-- Gamepass-kind troll items: owning the pass lets you trigger it (with a
+-- cooldown so it can't be spammed). Fired right after purchase too.
+local passCooldowns: { [Player]: { [number]: number } } = {}
+
+MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(player, gamePassId, wasPurchased)
+	if not wasPurchased then return end
+	local item = TROLL_BY_PASS[gamePassId]
+	if item then
+		runTroll(item, player)
 	end
+end)
+
+Players.PlayerRemoving:Connect(function(p)
+	passCooldowns[p] = nil
 end)
